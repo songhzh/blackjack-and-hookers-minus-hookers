@@ -1,10 +1,18 @@
 from table import Table
 from player import Player
+from clear import *
 
-def main():
-    players = [Player('a', 100), Player('b', 100)]
-    table = Table(players)
-    table.play()
+start = 100
+bet = 10
 
 if __name__ == "__main__":
-    main()
+    clear()
+    print('Please enter your name')
+    name = input(' >')
+    player = Player(name, start)
+    players = [player]
+    table = Table(players)
+    while table.check_players(bet):
+        clear()
+        table.play(bet)
+    print('The house wins!')
