@@ -1,8 +1,10 @@
-from manager import Manager
+from table import Table
+from player import Player
 
 def main():
-    m = Manager()
-    m.say()
+    players = [Player('a', 100), Player('b', 100)]
+    table = Table(players)
+    table.play()
 
 if __name__ == "__main__":
     main()
